@@ -1,10 +1,9 @@
 === SheetSync for CF7 ===
-Contributors: yourwporgusername
+Contributors: renovasrls
 Tags: contact form 7, google sheets, spreadsheet, cf7, leads
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 8.0
-Requires Plugins: contact-form-7
 Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
