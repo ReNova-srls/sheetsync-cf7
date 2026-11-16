@@ -1,0 +1,752 @@
+/**
+ * SheetSync for CF7 – admin styles.
+ * Everything is scoped under .ss-cf7-* and uses the WordPress admin palette.
+ */
+
+/* Layout ---------------------------------------------------------------- */
+
+.ss-cf7-wrap {
+	max-width: 960px;
+}
+
+.ss-cf7-intro {
+	font-size: 14px;
+	max-width: 760px;
+}
+
+.ss-cf7-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	margin: 16px 0;
+	padding: 16px 20px;
+}
+
+.ss-cf7-card > h2 {
+	margin-top: 0;
+}
+
+/* Quick start guide ----------------------------------------------------- */
+
+.ss-cf7-guide > summary {
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 600;
+	list-style-position: outside;
+	padding: 2px 0;
+}
+
+.ss-cf7-guide > summary:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.ss-cf7-steps {
+	counter-reset: ss-cf7-step;
+	list-style: none;
+	margin: 18px 0 0;
+	padding: 0;
+}
+
+.ss-cf7-steps > li {
+	counter-increment: ss-cf7-step;
+	margin: 0 0 18px;
+	padding-left: 44px;
+	position: relative;
+}
+
+.ss-cf7-steps > li::before {
+	align-items: center;
+	background: #2271b1;
+	border-radius: 50%;
+	color: #fff;
+	content: counter(ss-cf7-step);
+	display: flex;
+	font-weight: 600;
+	height: 28px;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: -3px;
+	width: 28px;
+}
+
+.ss-cf7-steps p {
+	margin: 4px 0 8px;
+}
+
+.ss-cf7-tip {
+	background: #f6f7f7;
+	border-radius: 4px;
+	color: #50575e;
+	margin: 0;
+	padding: 10px 12px;
+}
+
+.ss-cf7-tip .dashicons {
+	color: #2271b1;
+	margin-right: 4px;
+}
+
+/* Status, email, actions ----------------------------------------------- */
+
+.ss-cf7-status {
+	align-items: center;
+	border-radius: 999px;
+	display: inline-flex;
+	font-weight: 600;
+	gap: 6px;
+	padding: 4px 12px 4px 8px;
+}
+
+.ss-cf7-status.is-connected {
+	background: #edfaef;
+	color: #00712e;
+}
+
+.ss-cf7-status.is-disconnected {
+	background: #fcf0f1;
+	color: #b32d2e;
+}
+
+.ss-cf7-email-row,
+.ss-cf7-share-hint {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 8px 0;
+}
+
+.ss-cf7-email-input {
+	flex: 1 1 280px;
+	max-width: 520px;
+}
+
+.ss-cf7-email {
+	font-size: 13px;
+	padding: 4px 8px;
+	word-break: break-all;
+}
+
+.ss-cf7-share-hint {
+	background: #f0f6fc;
+	border-radius: 4px;
+	padding: 10px 12px;
+}
+
+.ss-cf7-actions {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 16px;
+}
+
+.ss-cf7-panel .ss-cf7-actions {
+	margin-top: 0;
+}
+
+.ss-cf7-actions .spinner {
+	float: none;
+	margin: 0;
+}
+
+.ss-cf7-inline-form {
+	margin: 0 0 0 auto;
+}
+
+.ss-cf7-inline-field {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 8px 0 4px;
+}
+
+.ss-cf7-inline-field input.regular-text {
+	max-width: 100%;
+}
+
+.ss-cf7-channel-table {
+	border-collapse: collapse;
+	margin-top: 8px;
+}
+
+.ss-cf7-channel-table th,
+.ss-cf7-channel-table td {
+	padding: 4px 12px 4px 0;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.ss-cf7-channel-table th {
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+@media (max-width: 782px) {
+	.ss-cf7-channel-table th,
+	.ss-cf7-channel-table td {
+		display: block;
+		padding: 2px 0;
+	}
+}
+
+.ss-cf7-hint {
+	color: #50575e;
+	font-style: italic;
+	margin: 6px 0 0;
+}
+
+.ss-cf7-hint.is-warning {
+	border-left: 4px solid #dba617;
+	color: #1d2327;
+	font-style: normal;
+	padding-left: 8px;
+}
+
+.ss-cf7-copy .dashicons,
+.ss-cf7-actions .button .dashicons {
+	font-size: 16px;
+	height: 16px;
+	line-height: 1.6;
+	vertical-align: middle;
+	width: 16px;
+}
+
+.ss-cf7-copy.is-copied {
+	border-color: #00a32a;
+	color: #00712e;
+}
+
+.button.ss-cf7-button-danger {
+	border-color: #d63638;
+	color: #b32d2e;
+}
+
+.button.ss-cf7-button-danger:hover,
+.button.ss-cf7-button-danger:focus {
+	background: #fcf0f1;
+	border-color: #b32d2e;
+	color: #8a2424;
+}
+
+/* JSON textarea --------------------------------------------------------- */
+
+.ss-cf7-json {
+	font-family: Consolas, Monaco, monospace;
+	font-size: 12px;
+	min-height: 180px;
+}
+
+/* Result / feedback boxes ---------------------------------------------- */
+
+.ss-cf7-result {
+	background: #f0f6fc;
+	border-left: 4px solid #72aee6;
+	margin: 12px 0 0;
+	padding: 10px 14px;
+}
+
+.ss-cf7-result[hidden] {
+	display: none;
+}
+
+.ss-cf7-result.is-success {
+	background: #edfaef;
+	border-left-color: #00a32a;
+}
+
+.ss-cf7-result.is-warning {
+	background: #fcf9e8;
+	border-left-color: #dba617;
+}
+
+.ss-cf7-result.is-error {
+	background: #fcf0f1;
+	border-left-color: #d63638;
+}
+
+.ss-cf7-result p {
+	margin: 0 0 6px;
+}
+
+.ss-cf7-result p:last-child {
+	margin-bottom: 0;
+}
+
+.ss-cf7-result ul {
+	list-style: disc;
+	margin: 4px 0 8px 20px;
+}
+
+.ss-cf7-panel > .ss-cf7-result {
+	margin-bottom: 12px;
+}
+
+/* CF7 panel ------------------------------------------------------------- */
+
+.ss-cf7-panel .form-table th {
+	width: 180px;
+}
+
+.ss-cf7-check-option {
+	display: inline-block;
+	margin: 0 16px 6px 0;
+}
+
+/* Column mapping */
+
+.ss-cf7-mapping-table {
+	margin-top: 12px;
+	max-width: 760px;
+}
+
+.ss-cf7-mapping-table td {
+	vertical-align: middle;
+}
+
+.ss-cf7-mapping-table td:first-child {
+	width: 35%;
+	word-break: break-word;
+}
+
+.ss-cf7-mapping-table select {
+	max-width: 100%;
+	min-width: 220px;
+}
+
+.ss-cf7-rule-text {
+	display: block;
+	margin-top: 6px;
+	max-width: 100%;
+}
+
+.ss-cf7-rule-text[hidden],
+.ss-cf7-mapping-table[hidden] {
+	display: none;
+}
+
+.ss-cf7-columns code {
+	display: inline-block;
+	margin: 2px 4px 2px 0;
+}
+
+/* Connected forms table ------------------------------------------------- */
+
+.ss-cf7-forms-table td,
+.ss-cf7-forms-table th {
+	vertical-align: middle;
+}
+
+.ss-cf7-pill {
+	background: #f0f0f1;
+	border-radius: 999px;
+	color: #50575e;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 2px 10px;
+}
+
+.ss-cf7-pill.is-on {
+	background: #edfaef;
+	color: #00712e;
+}
+
+/* Tabs ------------------------------------------------------------------ */
+
+.ss-cf7-tabs {
+	margin-bottom: 8px;
+}
+
+/* Dashboard: status colors (reserved, always paired with icon + label) --- */
+
+.ss-cf7-wrap {
+	--ss-cf7-sent: #0ca30c;
+	--ss-cf7-failed: #d03b3b;
+	--ss-cf7-pending: #fab219;
+	--ss-cf7-grid: #e1e0d9;
+	--ss-cf7-axis: #c3c2b7;
+	--ss-cf7-muted: #646970;
+}
+
+.ss-cf7-swatch {
+	border-radius: 2px;
+	display: inline-block;
+	flex: none;
+	height: 10px;
+	margin-right: 6px;
+	vertical-align: baseline;
+	width: 10px;
+}
+
+.ss-cf7-swatch.is-sent { background: var(--ss-cf7-sent); }
+.ss-cf7-swatch.is-failed { background: var(--ss-cf7-failed); }
+.ss-cf7-swatch.is-pending { background: var(--ss-cf7-pending); }
+
+/* Filters */
+
+.ss-cf7-filters {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 16px 0;
+}
+
+.ss-cf7-filters input[type="search"] {
+	min-width: 220px;
+}
+
+.ss-cf7-export {
+	margin-left: auto !important;
+}
+
+.ss-cf7-export .dashicons {
+	font-size: 16px;
+	height: 16px;
+	line-height: 1.6;
+	width: 16px;
+}
+
+/* KPI tiles */
+
+.ss-cf7-kpis {
+	display: grid;
+	gap: 12px;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	margin: 16px 0;
+}
+
+.ss-cf7-kpi {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 12px 16px;
+}
+
+.ss-cf7-kpi-label {
+	align-items: center;
+	color: var(--ss-cf7-muted);
+	display: flex;
+	font-size: 13px;
+}
+
+.ss-cf7-kpi-value {
+	color: #1d2327;
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+/* Chart */
+
+.ss-cf7-chart-head {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 24px;
+	justify-content: space-between;
+}
+
+.ss-cf7-chart-head h2 {
+	margin: 0;
+}
+
+.ss-cf7-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ss-cf7-legend li {
+	align-items: center;
+	color: #1d2327;
+	display: flex;
+	margin: 0;
+}
+
+.ss-cf7-chart {
+	margin-top: 12px;
+	min-height: 220px;
+	position: relative;
+}
+
+.ss-cf7-chart-svg {
+	display: block;
+	overflow: visible;
+}
+
+.ss-cf7-grid {
+	stroke: var(--ss-cf7-grid);
+	stroke-width: 1;
+}
+
+.ss-cf7-axis {
+	stroke: var(--ss-cf7-axis);
+	stroke-width: 1;
+}
+
+.ss-cf7-tick {
+	fill: var(--ss-cf7-muted);
+	font-size: 11px;
+	font-variant-numeric: tabular-nums;
+}
+
+.ss-cf7-seg.is-sent { fill: var(--ss-cf7-sent); }
+.ss-cf7-seg.is-failed { fill: var(--ss-cf7-failed); }
+.ss-cf7-seg.is-pending { fill: var(--ss-cf7-pending); }
+
+.ss-cf7-hit {
+	fill: transparent;
+}
+
+.ss-cf7-col.is-active .ss-cf7-hit {
+	fill: rgba(0, 0, 0, 0.04);
+}
+
+.ss-cf7-chart-empty {
+	color: var(--ss-cf7-muted);
+	margin: 0;
+	padding: 80px 0;
+	text-align: center;
+}
+
+.ss-cf7-tooltip {
+	background: #fff;
+	border: 1px solid rgba(11, 11, 11, 0.1);
+	border-radius: 4px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+	min-width: 150px;
+	padding: 8px 10px;
+	pointer-events: none;
+	position: absolute;
+	z-index: 2;
+}
+
+.ss-cf7-tooltip[hidden] {
+	display: none;
+}
+
+.ss-cf7-tooltip strong {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.ss-cf7-tooltip-row {
+	align-items: center;
+	display: flex;
+	gap: 0;
+	line-height: 1.7;
+}
+
+.ss-cf7-tooltip-value {
+	font-variant-numeric: tabular-nums;
+	font-weight: 600;
+	margin-left: auto;
+	padding-left: 16px;
+}
+
+/* Keyboard alternative of the chart: invisible until focused. */
+.ss-cf7-chart-keys {
+	inset: 0;
+	pointer-events: none;
+	position: absolute;
+}
+
+.ss-cf7-chart-key {
+	background: transparent;
+	border: 0;
+	bottom: 26px;
+	cursor: default;
+	opacity: 0;
+	padding: 0;
+	position: absolute;
+	top: 8px;
+}
+
+.ss-cf7-chart-key:focus-visible {
+	opacity: 1;
+	outline: 2px solid #2271b1;
+	outline-offset: -2px;
+}
+
+.ss-cf7-chart-table {
+	margin-top: 12px;
+}
+
+.ss-cf7-chart-table summary {
+	color: #2271b1;
+	cursor: pointer;
+}
+
+.ss-cf7-chart-table table {
+	margin-top: 8px;
+	max-width: 520px;
+}
+
+/* Entries table */
+
+.ss-cf7-entries-table .column-date {
+	white-space: nowrap;
+	width: 160px;
+}
+
+.ss-cf7-preview {
+	color: #50575e;
+	word-break: break-word;
+}
+
+.ss-cf7-row-actions {
+	text-align: right;
+	width: 90px;
+}
+
+.ss-cf7-status-pill {
+	align-items: center;
+	border-radius: 999px;
+	display: inline-flex;
+	font-size: 12px;
+	font-weight: 600;
+	gap: 4px;
+	padding: 2px 10px 2px 6px;
+	white-space: nowrap;
+}
+
+.ss-cf7-status-pill .dashicons {
+	font-size: 16px;
+	height: 16px;
+	width: 16px;
+}
+
+.ss-cf7-status-pill.is-sent {
+	background: #edfaef;
+	color: #006300;
+}
+
+.ss-cf7-status-pill.is-failed {
+	background: #fcf0f1;
+	color: #a1282b;
+}
+
+.ss-cf7-status-pill.is-pending {
+	background: #fcf9e8;
+	color: #7a5600;
+}
+
+/* Entry inspector dialog */
+
+.ss-cf7-dialog {
+	border: 0;
+	border-radius: 6px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+	max-height: 85vh;
+	max-width: 720px;
+	padding: 0;
+	width: calc(100% - 32px);
+}
+
+.ss-cf7-dialog::backdrop {
+	background: rgba(0, 0, 0, 0.45);
+}
+
+.ss-cf7-dialog-inner {
+	padding: 16px 20px 20px;
+}
+
+.ss-cf7-dialog-head {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.ss-cf7-dialog-head h2 {
+	margin: 0;
+}
+
+.ss-cf7-dialog-close {
+	color: #50575e;
+	text-decoration: none;
+}
+
+.ss-cf7-dialog-close .dashicons {
+	font-size: 24px;
+	height: 24px;
+	width: 24px;
+}
+
+.ss-cf7-entry-meta {
+	display: grid;
+	gap: 6px 16px;
+	grid-template-columns: max-content 1fr;
+	margin: 16px 0;
+}
+
+.ss-cf7-entry-meta dt {
+	color: var(--ss-cf7-muted);
+}
+
+.ss-cf7-entry-meta dd {
+	margin: 0;
+	word-break: break-word;
+}
+
+.ss-cf7-dialog-section h3 {
+	margin: 20px 0 8px;
+}
+
+.ss-cf7-dialog-section th[scope="row"] {
+	width: 35%;
+	word-break: break-word;
+}
+
+.ss-cf7-dialog-section td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.ss-cf7-muted {
+	color: var(--ss-cf7-muted);
+	font-style: italic;
+}
+
+.ss-cf7-dialog-foot {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: flex-end;
+	margin-top: 20px;
+}
+
+/* Small screens --------------------------------------------------------- */
+
+@media screen and (max-width: 782px) {
+	.ss-cf7-card {
+		padding: 12px 14px;
+	}
+
+	.ss-cf7-export {
+		margin-left: 0 !important;
+	}
+
+	.ss-cf7-entries-table .column-date {
+		width: auto;
+	}
+
+	.ss-cf7-inline-form {
+		margin-left: 0;
+	}
+
+	.ss-cf7-panel .form-table th {
+		width: auto;
+	}
+}

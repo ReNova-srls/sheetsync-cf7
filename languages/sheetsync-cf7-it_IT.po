@@ -1,0 +1,1290 @@
+# Copyright (C) ReNova s.r.l.s.
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: SheetSync for CF7 1.4.0\n"
+"POT-Creation-Date: 2026-11-16 19:41+0000\n"
+"PO-Revision-Date: 2026-11-16 19:41+0000\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: sheetsync-cf7\n"
+
+#: includes/class-admin-settings.php
+msgid "SheetSync for CF7"
+msgstr "SheetSync for CF7"
+
+#: includes/class-admin-settings.php
+msgid "Copy email"
+msgstr "Copia email"
+
+#: includes/class-admin-settings.php
+msgid "Copied!"
+msgstr "Copiata!"
+
+#: includes/class-admin-settings.php
+msgid "Copy failed: select the text and press Ctrl+C / Cmd+C."
+msgstr "Copia non riuscita: seleziona il testo e premi Ctrl+C / Cmd+C."
+
+#: includes/class-admin-settings.php
+msgid "Contacting Google…"
+msgstr "Contatto Google in corso…"
+
+#: includes/class-admin-settings.php
+msgid "Syncing headers with Google Sheets…"
+msgstr "Sincronizzazione delle intestazioni con Google Sheets…"
+
+#: includes/class-admin-settings.php
+msgid "Reading the columns of the sheet…"
+msgstr "Lettura delle colonne del foglio…"
+
+#: includes/class-admin-settings.php
+msgid "The request failed. Check your connection and try again."
+msgstr "La richiesta non è andata a buon fine. Controlla la connessione e riprova."
+
+#: includes/class-admin-settings.php
+msgid "This is not valid JSON. Paste the whole content of the .json key file."
+msgstr "Questo non è un JSON valido. Incolla l'intero contenuto del file chiave .json."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Required fields missing from the JSON: %s."
+msgstr "Campi obbligatori mancanti nel JSON: %s."
+
+#: includes/class-admin-settings.php
+msgid "This JSON is not a Service Account key (\"type\" must be \"service_account\")."
+msgstr "Questo JSON non è una chiave di Service Account (\"type\" deve essere \"service_account\")."
+
+#: includes/class-admin-settings.php
+msgid "This file is too large to be a Service Account key."
+msgstr "Il file è troppo grande per essere una chiave di Service Account."
+
+#: includes/class-admin-settings.php
+msgid "The file could not be read."
+msgstr "Impossibile leggere il file."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Key loaded for %s. Click \"Save credentials\" to store it."
+msgstr "Chiave caricata per %s. Clicca su \"Salva credenziali\" per memorizzarla."
+
+#: includes/class-admin-settings.php
+msgid "Upload the JSON key file or paste its content first."
+msgstr "Carica prima il file chiave JSON o incollane il contenuto."
+
+#: includes/class-admin-settings.php
+msgid "Enter the Spreadsheet ID (or paste the full spreadsheet URL) first."
+msgstr "Inserisci prima lo Spreadsheet ID (o incolla l'URL completo del foglio)."
+
+#: includes/class-admin-settings.php
+msgid "Columns added:"
+msgstr "Colonne aggiunte:"
+
+#: includes/class-admin-settings.php
+msgid "Columns in the sheet with no matching field (they will stay empty unless you map them below):"
+msgstr "Colonne del foglio senza un campo corrispondente (resteranno vuote, a meno che tu non le mappi qui sotto):"
+
+#: includes/class-admin-settings.php
+msgid "Remember to save the form to keep these Google Sheets settings."
+msgstr "Ricordati di salvare il modulo per mantenere queste impostazioni di Google Sheets."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Automatic → %s"
+msgstr "Automatico → %s"
+
+#: includes/class-admin-settings.php
+msgid "Automatic (no field with this name: stays empty)"
+msgstr "Automatico (nessun campo con questo nome: resta vuota)"
+
+#: includes/class-admin-settings.php
+msgid "Leave empty"
+msgstr "Lascia vuota"
+
+#: includes/class-admin-settings.php
+msgid "Custom text…"
+msgstr "Testo personalizzato…"
+
+#: includes/class-admin-settings.php
+msgid "Form fields"
+msgstr "Campi del modulo"
+
+#: includes/class-admin-settings.php
+msgid "Metadata"
+msgstr "Metadati"
+
+#: includes/class-admin-settings.php
+msgid "Lead source (UTM / click ID)"
+msgstr "Fonte lead (UTM / click ID)"
+
+#: includes/class-admin-settings.php
+msgid "e.g. Google Ads, or [your-name] – [_post_title]"
+msgstr "es. Google Ads, oppure [your-name] – [_post_title]"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "%d columns read from the sheet. Choose what to write in each one, then save the form."
+msgstr "%d colonne lette dal foglio. Scegli cosa scrivere in ognuna, poi salva il modulo."
+
+#: includes/class-admin-settings.php
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: includes/class-admin-settings.php
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: includes/class-admin-settings.php
+msgid "SheetSync for CF7 sections"
+msgstr "Sezioni di SheetSync for CF7"
+
+#: includes/class-admin-settings.php
+msgid "Send Contact Form 7 submissions to Google Sheets in real time using your own Google Service Account. Your key stays on your site: no third-party servers are involved."
+msgstr "Invia in tempo reale gli invii di Contact Form 7 a Google Sheets usando il tuo Google Service Account. La chiave resta sul tuo sito: nessun server di terze parti è coinvolto."
+
+#: includes/class-admin-settings.php
+msgid "Date and time format"
+msgstr "Formato data e ora"
+
+#: includes/class-admin-settings.php
+msgid "Date"
+msgstr "Data"
+
+#: includes/class-admin-settings.php
+msgid "Time"
+msgstr "Ora"
+
+#: includes/class-admin-settings.php
+msgid "Do not write the time"
+msgstr "Non scrivere l'ora"
+
+#: includes/class-admin-settings.php
+msgid "Used for the \"Submission date\" column (site timezone)."
+msgstr "Usato per la colonna \"Data e ora invio\" (fuso orario del sito)."
+
+#: includes/class-admin-settings.php
+msgid "Date fields"
+msgstr "Campi data"
+
+#: includes/class-admin-settings.php
+msgid "Use the same date format for the date fields of the forms ([date])"
+msgstr "Usa lo stesso formato per i campi data dei moduli ([date])"
+
+#: includes/class-admin-settings.php
+msgid "Contact Form 7 sends them as 2026-03-11."
+msgstr "Contact Form 7 li invia come 2026-03-11."
+
+#: includes/class-admin-settings.php
+msgid "Google Sheets turns the text into a real date (usable with the date picker, filters and formulas) only when the format matches the locale of the spreadsheet: File → Settings → Locale. With \"Italy\" use 11/03/2026; with \"United States\" use 03/11/2026. 2026-03-11 works with every locale."
+msgstr "Google Sheets trasforma il testo in una vera data (utilizzabile con il selettore data, i filtri e le formule) solo se il formato corrisponde alle impostazioni internazionali del foglio: File → Impostazioni → Impostazioni internazionali. Con \"Italia\" usa 11/03/2026; con \"Stati Uniti\" usa 03/11/2026. 2026-03-11 funziona con qualsiasi impostazione."
+
+#: includes/class-admin-settings.php
+msgid "Save settings"
+msgstr "Salva impostazioni"
+
+#: includes/class-admin-settings.php
+msgid "Only the page where the visitor lands (nothing stored in the browser)"
+msgstr "Solo la pagina di arrivo del visitatore (niente salvato nel browser)"
+
+#: includes/class-admin-settings.php
+msgid "7 days"
+msgstr "7 giorni"
+
+#: includes/class-admin-settings.php
+msgid "30 days"
+msgstr "30 giorni"
+
+#: includes/class-admin-settings.php
+msgid "90 days"
+msgstr "90 giorni"
+
+#: includes/class-admin-settings.php
+msgid "Lead source tracking (UTM / gclid)"
+msgstr "Tracciamento fonte lead (UTM / gclid)"
+
+#: includes/class-admin-settings.php
+msgid "Records where each lead comes from: Google Ads, Meta Ads, organic search, other websites… from the UTM parameters and the ad click IDs (gclid, fbclid, msclkid) of the page where the visitor arrived, even if the form is on another page."
+msgstr "Registra da dove arriva ogni lead: Google Ads, Meta Ads, ricerca organica, altri siti… in base ai parametri UTM e agli ID di click degli annunci (gclid, fbclid, msclkid) della pagina di arrivo del visitatore, anche se il modulo si trova su un'altra pagina."
+
+#: includes/class-admin-settings.php
+msgid "Tracking"
+msgstr "Tracciamento"
+
+#: includes/class-admin-settings.php
+msgid "Capture the lead source of every submission"
+msgstr "Registra la fonte di ogni lead"
+
+#: includes/class-admin-settings.php
+msgid "Adds a small script (about 2 KB, no cookies, no external requests) to the pages of the site."
+msgstr "Aggiunge alle pagine del sito un piccolo script (circa 2 KB, senza cookie né richieste esterne)."
+
+#: includes/class-admin-settings.php
+msgid "Remember the source for"
+msgstr "Ricorda la fonte per"
+
+#: includes/class-admin-settings.php
+msgid "With a duration, the campaign is kept in the browser (localStorage) so the lead is attributed even when the visitor comes back later directly."
+msgstr "Con una durata, la campagna viene conservata nel browser (localStorage): il lead viene attribuito anche se il visitatore torna più tardi in modo diretto."
+
+#: includes/class-admin-settings.php
+msgid "If there are several visits"
+msgstr "Se ci sono più visite"
+
+#: includes/class-admin-settings.php
+msgid "Last campaign click (recommended)"
+msgstr "Ultimo click di campagna (consigliato)"
+
+#: includes/class-admin-settings.php
+msgid "First campaign click"
+msgstr "Primo click di campagna"
+
+#: includes/class-admin-settings.php
+msgid "Direct visits never replace a campaign."
+msgstr "Le visite dirette non sostituiscono mai una campagna."
+
+#: includes/class-admin-settings.php
+msgid "Cookie consent"
+msgstr "Consenso cookie"
+
+#: includes/class-admin-settings.php
+msgid "Remember the source only with the visitor's marketing consent"
+msgstr "Ricorda la fonte solo con il consenso marketing del visitatore"
+
+#: includes/class-admin-settings.php
+msgid "Uses the WP Consent API, supported by Complianz, CookieYes, Cookiebot, Real Cookie Banner and others. Without consent the source is still read from the page where the form is sent, but nothing is stored in the browser."
+msgstr "Usa la WP Consent API, supportata da Complianz, CookieYes, Cookiebot, Real Cookie Banner e altri. Senza consenso la fonte viene comunque letta dalla pagina in cui si invia il modulo, ma nel browser non viene salvato nulla."
+
+#: includes/class-admin-settings.php
+msgid "WP Consent API not detected: until you install it (with a compatible cookie banner), the source is read only from the page where the form is sent."
+msgstr "WP Consent API non rilevata: finché non la installi (con un banner cookie compatibile), la fonte viene letta solo dalla pagina in cui si invia il modulo."
+
+#: includes/class-admin-settings.php
+msgid "Channel names"
+msgstr "Nomi dei canali"
+
+#: includes/class-admin-settings.php
+msgid "What is written in the \"Lead source\" column for each channel. Leave empty to use the default name."
+msgstr "Cosa viene scritto nella colonna \"Fonte lead\" per ogni canale. Lascia vuoto per usare il nome predefinito."
+
+#: includes/class-admin-settings.php
+msgid "Then, in the Google Sheets tab of each form, tick the \"Lead source\" columns or map a column of your sheet (e.g. \"Lead type\") to \"Lead source\". The same values are available as mail-tags for the CF7 emails and the custom texts:"
+msgstr "Poi, nel tab Google Sheets di ogni modulo, spunta le colonne \"Fonte lead\" oppure mappa una colonna del foglio (es. \"Tipologia Lead\") su \"Fonte lead\". Gli stessi valori sono disponibili come mail-tag nelle email di CF7 e nei testi personalizzati:"
+
+#: includes/class-admin-settings.php
+msgid "Quick start guide: connect Google Sheets in 4 steps"
+msgstr "Guida rapida: collega Google Sheets in 4 passaggi"
+
+#: includes/class-admin-settings.php
+msgid "Create a Google Cloud project"
+msgstr "Crea un progetto Google Cloud"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Open the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Cloud Console</a> and create a new project (or select an existing one). It is free: no billing account is needed for the Sheets API."
+msgstr "Apri la <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Cloud Console</a> e crea un nuovo progetto (o selezionane uno esistente). È gratuito: per le Sheets API non serve un account di fatturazione."
+
+#: includes/class-admin-settings.php
+msgid "Enable the Google Sheets API"
+msgstr "Abilita le Google Sheets API"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Open the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Google Sheets API page</a>, check that your project is selected at the top, and click <strong>Enable</strong>."
+msgstr "Apri la <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">pagina delle Google Sheets API</a>, verifica che in alto sia selezionato il tuo progetto e clicca su <strong>Abilita</strong>."
+
+#: includes/class-admin-settings.php
+msgid "Create a Service Account and download its JSON key"
+msgstr "Crea un Service Account e scarica la chiave JSON"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Go to <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">IAM &amp; Admin → Service Accounts</a>, click <strong>Create service account</strong> and give it a name (no roles are needed). Then open it, go to the <strong>Keys</strong> tab → <strong>Add key</strong> → <strong>Create new key</strong> → <strong>JSON</strong>. A <code>.json</code> file is downloaded: upload it in the box below."
+msgstr "Vai su <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">IAM e amministrazione → Account di servizio</a>, clicca su <strong>Crea account di servizio</strong> e dagli un nome (non servono ruoli). Poi aprilo, vai nella scheda <strong>Chiavi</strong> → <strong>Aggiungi chiave</strong> → <strong>Crea nuova chiave</strong> → <strong>JSON</strong>. Verrà scaricato un file <code>.json</code>: caricalo nel riquadro qui sotto."
+
+#: includes/class-admin-settings.php
+msgid "Share your spreadsheet with the Service Account"
+msgstr "Condividi il foglio con il Service Account"
+
+#: includes/class-admin-settings.php
+msgid "Open your Google Sheet, click <strong>Share</strong>, paste the Service Account email and grant <strong>Editor</strong> access. Repeat for every spreadsheet you want to use."
+msgstr "Apri il tuo Google Sheet, clicca su <strong>Condividi</strong>, incolla l'email del Service Account e assegna il ruolo <strong>Editor</strong>. Ripeti per ogni foglio che vuoi usare."
+
+#: includes/class-admin-settings.php
+msgid "Treat the JSON file like a password: don't email it or commit it to public repositories, and delete it from your computer after uploading. If your Google Workspace organization blocks key creation, ask your Workspace administrator."
+msgstr "Tratta il file JSON come una password: non inviarlo via email né caricarlo in repository pubblici, ed eliminalo dal computer dopo il caricamento. Se la tua organizzazione Google Workspace blocca la creazione delle chiavi, rivolgiti all'amministratore di Workspace."
+
+#: includes/class-admin-settings.php
+msgid "Google Service Account"
+msgstr "Google Service Account"
+
+#: includes/class-admin-settings.php
+msgid "Connected"
+msgstr "Connesso"
+
+#: includes/class-admin-settings.php
+msgid "Share every spreadsheet you want to use with this email, as <strong>Editor</strong>:"
+msgstr "Condividi ogni foglio che vuoi usare con questa email, come <strong>Editor</strong>:"
+
+#: includes/class-admin-settings.php
+msgid "Service Account email"
+msgstr "Email del Service Account"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Project: %s"
+msgstr "Progetto: %s"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Saved on %s"
+msgstr "Salvato il %s"
+
+#: includes/class-admin-settings.php
+msgid "The private key is stored encrypted and is never displayed."
+msgstr "La chiave privata è salvata cifrata e non viene mai mostrata."
+
+#: includes/class-admin-settings.php
+msgid "Test connection"
+msgstr "Testa connessione"
+
+#: includes/class-admin-settings.php
+msgid "Remove the Service Account credentials? Your forms will stop sending data to Google Sheets until you add a new key."
+msgstr "Rimuovere le credenziali del Service Account? I moduli smetteranno di inviare dati a Google Sheets finché non aggiungerai una nuova chiave."
+
+#: includes/class-admin-settings.php
+msgid "Remove / Replace credentials"
+msgstr "Rimuovi / Sostituisci credenziali"
+
+#: includes/class-admin-settings.php
+msgid "Not connected"
+msgstr "Non connesso"
+
+#: includes/class-admin-settings.php
+msgid "Upload the JSON key file"
+msgstr "Carica il file chiave JSON"
+
+#: includes/class-admin-settings.php
+msgid "…or paste its content"
+msgstr "…oppure incollane il contenuto"
+
+#: includes/class-admin-settings.php
+msgid "The file is read in your browser and sent only to your own WordPress site. The private key is encrypted before being saved and will never be shown again."
+msgstr "Il file viene letto nel tuo browser e inviato solo al tuo sito WordPress. La chiave privata viene cifrata prima del salvataggio e non sarà più mostrata."
+
+#: includes/class-admin-settings.php
+msgid "Save credentials"
+msgstr "Salva credenziali"
+
+#: includes/class-admin-settings.php
+msgid "Forever"
+msgstr "Per sempre"
+
+#: includes/class-admin-settings.php
+msgid "6 months"
+msgstr "6 mesi"
+
+#: includes/class-admin-settings.php
+msgid "1 year"
+msgstr "1 anno"
+
+#: includes/class-admin-settings.php
+msgid "2 years"
+msgstr "2 anni"
+
+#: includes/class-admin-settings.php
+msgid "Archive, retries and alerts"
+msgstr "Archivio, nuovi tentativi e avvisi"
+
+#: includes/class-admin-settings.php
+msgid "Local copy"
+msgstr "Copia locale"
+
+#: includes/class-admin-settings.php
+msgid "Save a copy of every submission in WordPress"
+msgstr "Salva una copia di ogni invio in WordPress"
+
+#: includes/class-admin-settings.php
+msgid "Needed for the Dashboard, to resend submissions that failed and to export them as CSV. Nothing is lost even if Google Sheets is unreachable."
+msgstr "Serve per la Dashboard, per reinviare gli invii non riusciti e per esportarli in CSV. Nessun dato va perso anche se Google Sheets non è raggiungibile."
+
+#: includes/class-admin-settings.php
+msgid "Keep entries for"
+msgstr "Conserva gli invii per"
+
+#: includes/class-admin-settings.php
+msgid "Older entries are deleted automatically once a day (only from WordPress, never from Google Sheets). Entries contain personal data: keep them only as long as you need them (GDPR)."
+msgstr "Gli invii più vecchi vengono eliminati automaticamente una volta al giorno (solo da WordPress, mai da Google Sheets). Gli invii contengono dati personali: conservali solo per il tempo necessario (GDPR)."
+
+#: includes/class-admin-settings.php
+msgid "Automatic retry"
+msgstr "Nuovo tentativo automatico"
+
+#: includes/class-admin-settings.php
+msgid "Send failed submissions again automatically"
+msgstr "Reinvia automaticamente gli invii non riusciti"
+
+#: includes/class-admin-settings.php
+msgid "Maximum attempts"
+msgstr "Tentativi massimi"
+
+#: includes/class-admin-settings.php
+msgid "Runs in the background about once an hour, waiting longer after each failure (1, 2, 4, 8 hours…), so a temporary Google outage or quota limit is recovered without losing leads. Requires the local copy."
+msgstr "Funziona in background circa una volta all'ora, aspettando sempre di più dopo ogni errore (1, 2, 4, 8 ore…): così un disservizio temporaneo di Google o un limite di quota si risolvono senza perdere lead. Richiede la copia locale."
+
+#: includes/class-admin-settings.php
+msgid "Email alerts"
+msgstr "Avvisi email"
+
+#: includes/class-admin-settings.php
+msgid "Email me when a submission cannot be sent to Google Sheets"
+msgstr "Avvisami via email quando un invio non arriva a Google Sheets"
+
+#: includes/class-admin-settings.php
+msgid "Recipients"
+msgstr "Destinatari"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Separate multiple addresses with commas. Leave empty to use the site admin email (%s)."
+msgstr "Separa più indirizzi con una virgola. Lascia vuoto per usare l'email dell'amministratore del sito (%s)."
+
+#: includes/class-admin-settings.php
+msgid "You get an email when a submission fails and, if it is retried automatically, only again when the last attempt fails. At most one email per hour; the submitted data is never included."
+msgstr "Ricevi un'email quando un invio fallisce e, se viene ritentato in automatico, di nuovo solo quando fallisce anche l'ultimo tentativo. Al massimo un'email all'ora; i dati inviati non sono mai inclusi."
+
+#: includes/class-admin-settings.php
+msgid "Save and send a test email"
+msgstr "Salva e invia un'email di prova"
+
+#: includes/class-admin-settings.php
+msgid "The local copy is disabled: there is nothing to retry. Enable \"Save a copy of every submission in WordPress\"."
+msgstr "La copia locale è disattivata: non c'è niente da ritentare. Attiva \"Salva una copia di ogni invio in WordPress\"."
+
+#: includes/class-admin-settings.php
+msgid "WP-Cron is disabled on this site (DISABLE_WP_CRON): make sure a server cron job calls wp-cron.php, otherwise the automatic retry never runs."
+msgstr "WP-Cron è disattivato su questo sito (DISABLE_WP_CRON): assicurati che un cron job del server richiami wp-cron.php, altrimenti il nuovo tentativo automatico non parte mai."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Next check: %s."
+msgstr "Prossimo controllo: %s."
+
+#: includes/class-admin-settings.php
+msgid "Connected forms"
+msgstr "Moduli collegati"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "No form configured yet. Open a form in <a href=\"%s\">Contact → Contact Forms</a> and use the <strong>Google Sheets</strong> tab."
+msgstr "Nessun modulo configurato. Apri un modulo in <a href=\"%s\">Contatto → Moduli di contatto</a> e usa la scheda <strong>Google Sheets</strong>."
+
+#: includes/class-admin-settings.php
+msgid "Form"
+msgstr "Modulo"
+
+#: includes/class-admin-settings.php
+msgid "Status"
+msgstr "Stato"
+
+#: includes/class-admin-settings.php
+msgid "Spreadsheet"
+msgstr "Foglio"
+
+#: includes/class-admin-settings.php
+msgid "Tab"
+msgstr "Scheda"
+
+#: includes/class-admin-settings.php
+msgid "Active"
+msgstr "Attivo"
+
+#: includes/class-admin-settings.php
+msgid "Disabled"
+msgstr "Disattivato"
+
+#: includes/class-admin-settings.php
+msgid "first tab"
+msgstr "prima scheda"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Credentials saved, but the connection test failed: %s"
+msgstr "Credenziali salvate, ma il test di connessione non è riuscito: %s"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Credentials saved and connection to Google verified. Now share your spreadsheets with %s as Editor."
+msgstr "Credenziali salvate e connessione a Google verificata. Ora condividi i tuoi fogli con %s come Editor."
+
+#: includes/class-admin-settings.php
+msgid "Credentials removed. You can now upload a new JSON key."
+msgstr "Credenziali rimosse. Ora puoi caricare una nuova chiave JSON."
+
+#: includes/class-admin-settings.php
+msgid "Settings saved, but there is no valid recipient for the test email."
+msgstr "Impostazioni salvate, ma non c'è un destinatario valido per l'email di prova."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Settings saved. Test email sent to %s: if it does not arrive, check the spam folder and the email settings of the site (an SMTP plugin is recommended)."
+msgstr "Impostazioni salvate. Email di prova inviata a %s: se non arriva, controlla lo spam e le impostazioni email del sito (consigliato un plugin SMTP)."
+
+#: includes/class-admin-settings.php
+msgid "Settings saved, but WordPress could not send the test email. Check the email settings of the site (an SMTP plugin is recommended)."
+msgstr "Impostazioni salvate, ma WordPress non è riuscito a inviare l'email di prova. Controlla le impostazioni email del sito (consigliato un plugin SMTP)."
+
+#: includes/class-admin-settings.php
+msgid "Settings saved."
+msgstr "Impostazioni salvate."
+
+#: includes/class-admin-settings.php
+msgid "You are not allowed to perform this action."
+msgstr "Non hai i permessi per eseguire questa azione."
+
+#: includes/class-admin-settings.php
+msgid "Security check failed. Reload the page and try again."
+msgstr "Controllo di sicurezza non riuscito. Ricarica la pagina e riprova."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Connection successful! Google issued an access token for %s."
+msgstr "Connessione riuscita! Google ha rilasciato un access token per %s."
+
+#: includes/class-admin-settings.php
+msgid "No Service Account configured. Go to Contact → SheetSync for CF7 first."
+msgstr "Nessun Service Account configurato. Vai prima in Contatto → SheetSync for CF7."
+
+#: includes/class-admin-settings.php
+msgid "The Spreadsheet ID is missing or not valid."
+msgstr "Lo Spreadsheet ID manca o non è valido."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "The tab \"%1$s\" does not exist in \"%2$s\". Available tabs: %3$s. The name is case-sensitive."
+msgstr "La scheda \"%1$s\" non esiste in \"%2$s\". Schede disponibili: %3$s. Il nome distingue maiuscole e minuscole."
+
+#: includes/class-admin-settings.php
+msgid "Row 1 of the sheet is empty. Click \"Sync headers\" first, or write the column names in row 1."
+msgstr "La riga 1 del foglio è vuota. Clicca prima su \"Sincronizza intestazioni\" oppure scrivi i nomi delle colonne nella riga 1."
+
+#: includes/class-admin-settings.php
+msgid "Save the form at least once before syncing the headers."
+msgstr "Salva il modulo almeno una volta prima di sincronizzare le intestazioni."
+
+#: includes/class-admin-settings.php
+msgid "This form has no fields that can be sent to Google Sheets."
+msgstr "Questo modulo non ha campi che possano essere inviati a Google Sheets."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Headers already up to date in \"%1$s\" › %2$s."
+msgstr "Intestazioni già aggiornate in \"%1$s\" › %2$s."
+
+#: includes/class-admin-settings.php
+msgid "Google Sheets"
+msgstr "Google Sheets"
+
+#: includes/class-admin-settings.php
+msgid "Only administrators can configure the Google Sheets integration."
+msgstr "Solo gli amministratori possono configurare l'integrazione con Google Sheets."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "No Google Service Account configured yet. <a href=\"%s\">Configure it in Contact → SheetSync for CF7</a> first."
+msgstr "Nessun Google Service Account configurato. <a href=\"%s\">Configuralo prima in Contatto → SheetSync for CF7</a>."
+
+#: includes/class-admin-settings.php
+msgid "Share the spreadsheet as <strong>Editor</strong> with:"
+msgstr "Condividi il foglio come <strong>Editor</strong> con:"
+
+#: includes/class-admin-settings.php
+msgid "Google Sheets settings for this form"
+msgstr "Impostazioni di Google Sheets per questo modulo"
+
+#: includes/class-admin-settings.php
+msgid "Send the submissions of this form to Google Sheets"
+msgstr "Invia a Google Sheets i dati inviati con questo modulo"
+
+#: includes/class-admin-settings.php
+msgid "Spreadsheet ID"
+msgstr "Spreadsheet ID"
+
+#: includes/class-admin-settings.php
+msgid "Copy it from the spreadsheet URL: <code>https://docs.google.com/spreadsheets/d/<strong>SPREADSHEET_ID</strong>/edit</code>. You can also paste the full URL: the ID is extracted automatically."
+msgstr "Copialo dall'URL del foglio: <code>https://docs.google.com/spreadsheets/d/<strong>SPREADSHEET_ID</strong>/edit</code>. Puoi anche incollare l'URL completo: l'ID viene estratto automaticamente."
+
+#: includes/class-admin-settings.php
+msgid "Open spreadsheet"
+msgstr "Apri il foglio"
+
+#: includes/class-admin-settings.php
+msgid "Sheet (tab) name"
+msgstr "Nome del foglio (scheda)"
+
+#: includes/class-admin-settings.php
+msgid "Sheet1"
+msgstr "Foglio1"
+
+#: includes/class-admin-settings.php
+msgid "Exact name of the tab at the bottom of the spreadsheet (case-sensitive). Leave empty to use the first tab."
+msgstr "Nome esatto della scheda in basso nel foglio (distingue maiuscole e minuscole). Lascia vuoto per usare la prima scheda."
+
+#: includes/class-admin-settings.php
+msgid "Extra columns"
+msgstr "Colonne aggiuntive"
+
+#: includes/class-admin-settings.php
+msgid "Lead source columns"
+msgstr "Colonne fonte lead"
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "Lead source tracking is off: these columns stay empty. <a href=\"%s\">Turn it on in the settings</a>."
+msgstr "Il tracciamento della fonte lead è disattivato: queste colonne restano vuote. <a href=\"%s\">Attivalo nelle impostazioni</a>."
+
+#: includes/class-admin-settings.php
+msgid "\"Lead source\" is the channel (Google Ads, Organic search…); the names can be changed in Contact → SheetSync for CF7."
+msgstr "\"Fonte lead\" è il canale (Google Ads, Ricerca organica…); i nomi si cambiano in Contatto → SheetSync for CF7."
+
+#: includes/class-admin-settings.php
+msgid "Fields with pipes (Label | Value)"
+msgstr "Campi con pipe (Etichetta | Valore)"
+
+#: includes/class-admin-settings.php
+msgid "Value only (after the \"|\", default)"
+msgstr "Solo il valore (dopo la \"|\", predefinito)"
+
+#: includes/class-admin-settings.php
+msgid "Label only (the text the visitor sees)"
+msgstr "Solo l'etichetta (il testo che vede il visitatore)"
+
+#: includes/class-admin-settings.php
+msgid "Both, as \"Label | Value\""
+msgstr "Entrambi, come \"Etichetta | Valore\""
+
+#: includes/class-admin-settings.php
+msgid "For select, checkbox and radio options written as <code>Rome office|rome@example.com</code>. Fields without pipes are not affected."
+msgstr "Per le opzioni di select, checkbox e radio scritte come <code>Ufficio Roma|roma@example.com</code>. I campi senza pipe non cambiano."
+
+#: includes/class-admin-settings.php
+msgid "Fields not to send"
+msgstr "Campi da non inviare"
+
+#: includes/class-admin-settings.php
+msgid "Checked fields are not added as columns and are not written automatically (e.g. privacy consent checkboxes). You can still map them explicitly below."
+msgstr "I campi selezionati non vengono aggiunti come colonne né scritti in automatico (es. le checkbox di consenso privacy). Puoi comunque mapparli esplicitamente qui sotto."
+
+#: includes/class-admin-settings.php
+msgid "Column headers"
+msgstr "Intestazioni delle colonne"
+
+#: includes/class-admin-settings.php
+msgid "Sync headers"
+msgstr "Sincronizza intestazioni"
+
+#: includes/class-admin-settings.php
+msgid "Adds the missing field names of this form (plus the extra columns) to row 1 of the sheet. Existing columns are never moved or deleted."
+msgstr "Aggiunge alla riga 1 del foglio i nomi dei campi di questo modulo che mancano (più le colonne aggiuntive). Le colonne esistenti non vengono mai spostate né eliminate."
+
+#: includes/class-admin-settings.php
+msgid "Save the form first to enable this button."
+msgstr "Salva prima il modulo per abilitare questo pulsante."
+
+#: includes/class-admin-settings.php
+msgid "Columns of the saved form:"
+msgstr "Colonne del modulo salvato:"
+
+#: includes/class-admin-settings.php
+msgid "Added or renamed fields? Save the form first, then sync again."
+msgstr "Hai aggiunto o rinominato dei campi? Salva prima il modulo, poi sincronizza di nuovo."
+
+#: includes/class-admin-settings.php
+msgid "Column mapping"
+msgstr "Mappatura colonne"
+
+#: includes/class-admin-settings.php
+msgid "Decide what to write in each column of the sheet: a form field, a fixed text (e.g. \"Google Ads\" in a \"Lead type\" column), or nothing. \"Automatic\" fills the column with the field that has the same name."
+msgstr "Decidi cosa scrivere in ogni colonna del foglio: un campo del modulo, un testo fisso (es. \"Google Ads\" in una colonna \"Tipologia Lead\") oppure niente. \"Automatico\" riempie la colonna con il campo che ha lo stesso nome."
+
+#: includes/class-admin-settings.php
+msgid "Load columns from the sheet"
+msgstr "Carica colonne dal foglio"
+
+#: includes/class-admin-settings.php
+msgid "Sheet column"
+msgstr "Colonna del foglio"
+
+#: includes/class-admin-settings.php
+msgid "Value to write"
+msgstr "Valore da scrivere"
+
+#: includes/class-admin-settings.php
+msgid "Custom texts accept CF7 mail-tags, e.g. <code>[your-name]</code>, <code>[_post_title]</code>, <code>[_date]</code>, <code>[_url]</code>. The mapping is saved together with the form."
+msgstr "I testi personalizzati accettano i mail-tag di CF7, es. <code>[your-name]</code>, <code>[_post_title]</code>, <code>[_date]</code>, <code>[_url]</code>. La mappatura viene salvata insieme al modulo."
+
+#, php-format
+#: includes/class-admin-settings.php
+msgid "%1$d column added to \"%2$s\" › %3$s."
+msgid_plural "%1$d columns added to \"%2$s\" › %3$s."
+msgstr[0] "%1$d colonna aggiunta a \"%2$s\" › %3$s."
+msgstr[1] "%1$d colonne aggiunte a \"%2$s\" › %3$s."
+
+#: includes/class-attribution.php
+msgid "Google Ads"
+msgstr "Google Ads"
+
+#: includes/class-attribution.php
+msgid "Meta Ads"
+msgstr "Meta Ads"
+
+#: includes/class-attribution.php
+msgid "Microsoft Ads"
+msgstr "Microsoft Ads"
+
+#: includes/class-attribution.php
+msgid "TikTok Ads"
+msgstr "TikTok Ads"
+
+#: includes/class-attribution.php
+msgid "Other paid ads"
+msgstr "Altri annunci a pagamento"
+
+#: includes/class-attribution.php
+msgid "Organic search"
+msgstr "Ricerca organica"
+
+#: includes/class-attribution.php
+msgid "Social"
+msgstr "Social"
+
+#: includes/class-attribution.php
+msgid "Email"
+msgstr "Email"
+
+#: includes/class-attribution.php
+msgid "Other website"
+msgstr "Altro sito web"
+
+#: includes/class-attribution.php
+msgid "Other campaign"
+msgstr "Altra campagna"
+
+#: includes/class-attribution.php
+msgid "Direct"
+msgstr "Diretto"
+
+#: includes/class-cf7-handler.php
+msgid "Submission date"
+msgstr "Data e ora invio"
+
+#: includes/class-cf7-handler.php
+msgid "Page URL"
+msgstr "URL pagina"
+
+#: includes/class-cf7-handler.php
+msgid "IP address"
+msgstr "Indirizzo IP"
+
+#: includes/class-cf7-handler.php
+msgid "Lead source"
+msgstr "Fonte lead"
+
+#: includes/class-cf7-handler.php
+msgid "UTM source"
+msgstr "UTM source"
+
+#: includes/class-cf7-handler.php
+msgid "UTM medium"
+msgstr "UTM medium"
+
+#: includes/class-cf7-handler.php
+msgid "UTM campaign"
+msgstr "UTM campaign"
+
+#: includes/class-cf7-handler.php
+msgid "UTM term"
+msgstr "UTM term"
+
+#: includes/class-cf7-handler.php
+msgid "UTM content"
+msgstr "UTM content"
+
+#: includes/class-cf7-handler.php
+msgid "Google click ID"
+msgstr "ID click Google (gclid)"
+
+#: includes/class-cf7-handler.php
+msgid "Facebook click ID"
+msgstr "ID click Facebook (fbclid)"
+
+#: includes/class-cf7-handler.php
+msgid "Microsoft click ID"
+msgstr "ID click Microsoft (msclkid)"
+
+#: includes/class-cf7-handler.php
+msgid "Landing page"
+msgstr "Pagina di arrivo"
+
+#: includes/class-cf7-handler.php
+msgid "Referrer"
+msgstr "Provenienza (referrer)"
+
+#: includes/class-cf7-handler.php
+msgid "Entry not found."
+msgstr "Invio non trovato."
+
+#: includes/class-cf7-handler.php
+msgid "This form has no spreadsheet configured."
+msgstr "Questo modulo non ha un foglio configurato."
+
+#: includes/class-cf7-handler.php
+msgid "Nothing to send: no column of the sheet matches the form fields. Use \"Sync headers\" or the column mapping."
+msgstr "Niente da inviare: nessuna colonna del foglio corrisponde ai campi del modulo. Usa \"Sincronizza intestazioni\" o la mappatura colonne."
+
+#: includes/class-dashboard.php
+msgid "Sent"
+msgstr "Inviato"
+
+#: includes/class-dashboard.php
+msgid "Failed"
+msgstr "Errore"
+
+#: includes/class-dashboard.php
+msgid "Pending"
+msgstr "In attesa"
+
+#: includes/class-dashboard.php
+msgid "No submissions in this period."
+msgstr "Nessun invio in questo periodo."
+
+#: includes/class-dashboard.php
+msgid "Loading…"
+msgstr "Caricamento…"
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "Entry #%d"
+msgstr "Invio #%d"
+
+#: includes/class-dashboard.php
+msgid "Attempts"
+msgstr "Tentativi"
+
+#: includes/class-dashboard.php
+msgid "Sheet"
+msgstr "Foglio"
+
+#: includes/class-dashboard.php
+msgid "Sent to Google Sheets"
+msgstr "Inviati a Google Sheets"
+
+#: includes/class-dashboard.php
+msgid "Last error"
+msgstr "Ultimo errore"
+
+#: includes/class-dashboard.php
+msgid "Submitted data"
+msgstr "Dati inviati"
+
+#: includes/class-dashboard.php
+msgid "Row written in the sheet"
+msgstr "Riga scritta nel foglio"
+
+#: includes/class-dashboard.php
+msgid "Field"
+msgstr "Campo"
+
+#: includes/class-dashboard.php
+msgid "Value"
+msgstr "Valore"
+
+#: includes/class-dashboard.php
+msgid "Column"
+msgstr "Colonna"
+
+#: includes/class-dashboard.php
+msgid "Send to Google Sheets again"
+msgstr "Invia di nuovo a Google Sheets"
+
+#: includes/class-dashboard.php
+msgid "Sending…"
+msgstr "Invio in corso…"
+
+#: includes/class-dashboard.php
+msgid "Delete entry"
+msgstr "Elimina invio"
+
+#: includes/class-dashboard.php
+msgid "Delete this entry from WordPress? The row already written in Google Sheets is not touched."
+msgstr "Eliminare questo invio da WordPress? La riga già scritta in Google Sheets non viene toccata."
+
+#: includes/class-dashboard.php
+msgid "Close"
+msgstr "Chiudi"
+
+#: includes/class-dashboard.php
+msgid "(empty)"
+msgstr "(vuoto)"
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "The entries archive is disabled: new submissions are not stored in WordPress. <a href=\"%s\">Enable it in the Settings tab</a>."
+msgstr "L'archivio invii è disattivato: i nuovi invii non vengono salvati in WordPress. <a href=\"%s\">Attivalo nella scheda Impostazioni</a>."
+
+#: includes/class-dashboard.php
+msgid "Submissions"
+msgstr "Invii"
+
+#: includes/class-dashboard.php
+msgid "Show data as a table"
+msgstr "Mostra i dati in tabella"
+
+#: includes/class-dashboard.php
+msgid "Day"
+msgstr "Giorno"
+
+#: includes/class-dashboard.php
+msgid "No entries match these filters."
+msgstr "Nessun invio corrisponde a questi filtri."
+
+#: includes/class-dashboard.php
+msgid "Preview"
+msgstr "Anteprima"
+
+#: includes/class-dashboard.php
+msgid "Actions"
+msgstr "Azioni"
+
+#: includes/class-dashboard.php
+msgid "Details"
+msgstr "Dettagli"
+
+#: includes/class-dashboard.php
+msgid "All forms"
+msgstr "Tutti i moduli"
+
+#: includes/class-dashboard.php
+msgid "Period"
+msgstr "Periodo"
+
+#: includes/class-dashboard.php
+msgid "All statuses"
+msgstr "Tutti gli stati"
+
+#: includes/class-dashboard.php
+msgid "Search entries"
+msgstr "Cerca negli invii"
+
+#: includes/class-dashboard.php
+msgid "Search name, email, phone…"
+msgstr "Cerca nome, email, telefono…"
+
+#: includes/class-dashboard.php
+msgid "Filter"
+msgstr "Filtra"
+
+#: includes/class-dashboard.php
+msgid "Export CSV"
+msgstr "Esporta CSV"
+
+#: includes/class-dashboard.php
+msgid "Entry sent to Google Sheets."
+msgstr "Invio inviato a Google Sheets."
+
+#: includes/class-dashboard.php
+msgid "Entry deleted."
+msgstr "Invio eliminato."
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "Stopped: all %d attempts failed"
+msgstr "Interrotto: tutti i %d tentativi sono falliti"
+
+#: includes/class-dashboard.php
+msgid "Within the next hour"
+msgstr "Entro la prossima ora"
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "Next attempt around %s"
+msgstr "Prossimo tentativo verso le %s"
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "Deleted form #%d"
+msgstr "Modulo eliminato #%d"
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "Submissions per day, last %d day"
+msgid_plural "Submissions per day, last %d days"
+msgstr[0] "Invii al giorno, ultimo giorno"
+msgstr[1] "Invii al giorno, ultimi %d giorni"
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "%s entry"
+msgid_plural "%s entries"
+msgstr[0] "%s invio"
+msgstr[1] "%s invii"
+
+#, php-format
+#: includes/class-dashboard.php
+msgid "Last %d day"
+msgid_plural "Last %d days"
+msgstr[0] "Ultimo giorno"
+msgstr[1] "Ultimi %d giorni"
+
+#: includes/class-google-auth.php
+msgid "Paste the content of the Service Account JSON file (or upload the .json file)."
+msgstr "Incolla il contenuto del file JSON del Service Account (o carica il file .json)."
+
+#: includes/class-google-auth.php
+msgid "The JSON is too large to be a Service Account key."
+msgstr "Il JSON è troppo grande per essere una chiave di Service Account."
+
+#: includes/class-google-auth.php
+msgid "The text is not valid JSON. Paste the whole content of the .json file downloaded from Google Cloud Console."
+msgstr "Il testo non è un JSON valido. Incolla l'intero contenuto del file .json scaricato dalla Google Cloud Console."
+
+#: includes/class-google-auth.php
+msgid "This JSON is not a Service Account key (the \"type\" field must be \"service_account\"). Make sure you created a key for a Service Account, not an OAuth client ID."
+msgstr "Questo JSON non è una chiave di Service Account (il campo \"type\" deve essere \"service_account\"). Verifica di aver creato una chiave per un Service Account e non un ID client OAuth."
+
+#: includes/class-google-auth.php
+msgid "The \"client_email\" field is not a valid email address."
+msgstr "Il campo \"client_email\" non è un indirizzo email valido."
+
+#: includes/class-google-auth.php
+msgid "The \"token_uri\" field must be an official Google HTTPS endpoint (e.g. https://oauth2.googleapis.com/token)."
+msgstr "Il campo \"token_uri\" deve essere un endpoint HTTPS ufficiale di Google (es. https://oauth2.googleapis.com/token)."
+
+#: includes/class-google-auth.php
+msgid "The \"private_key\" field does not contain a PEM private key."
+msgstr "Il campo \"private_key\" non contiene una chiave privata PEM."
+
+#: includes/class-google-auth.php
+msgid "OpenSSL could not read the \"private_key\". The JSON may be truncated or modified: download a new key from Google Cloud Console."
+msgstr "OpenSSL non riesce a leggere la \"private_key\". Il JSON potrebbe essere incompleto o modificato: scarica una nuova chiave dalla Google Cloud Console."
+
+#: includes/class-google-auth.php
+msgid "The private key is not an RSA key, which is required by Google (RS256)."
+msgstr "La chiave privata non è una chiave RSA, richiesta da Google (RS256)."
+
+#: includes/class-google-auth.php
+msgid "Could not save the credentials to the database."
+msgstr "Impossibile salvare le credenziali nel database."
+
+#: includes/class-google-auth.php
+msgid "No Service Account configured. Go to Contact → SheetSync for CF7 and add your JSON key."
+msgstr "Nessun Service Account configurato. Vai in Contatto → SheetSync for CF7 e aggiungi la tua chiave JSON."
+
+#: includes/class-google-auth.php
+msgid "The stored credentials are corrupted. Remove them and upload the JSON key again."
+msgstr "Le credenziali salvate sono danneggiate. Rimuovile e carica di nuovo la chiave JSON."
+
+#, php-format
+#: includes/class-google-auth.php
+msgid "Could not reach the Google authentication server: %s"
+msgstr "Impossibile raggiungere il server di autenticazione Google: %s"
+
+#: includes/class-google-auth.php
+msgid "OpenSSL could not read the stored private key. Remove the credentials and upload the JSON key again."
+msgstr "OpenSSL non riesce a leggere la chiave privata salvata. Rimuovi le credenziali e carica di nuovo la chiave JSON."
+
+#: includes/class-google-auth.php
+msgid "OpenSSL failed to sign the authentication request (RS256)."
+msgstr "OpenSSL non è riuscito a firmare la richiesta di autenticazione (RS256)."
+
+#: includes/class-google-auth.php
+msgid "Google rejected the key: it may have been deleted or disabled in Google Cloud Console, or the Service Account no longer exists. Create a new JSON key and upload it again."
+msgstr "Google ha rifiutato la chiave: potrebbe essere stata eliminata o disattivata nella Google Cloud Console, oppure il Service Account non esiste più. Crea una nuova chiave JSON e caricala di nuovo."
+
+#: includes/class-google-auth.php
+msgid "Google rejected the request time: the server clock seems wrong. Ask your hosting provider to synchronize it (NTP)."
+msgstr "Google ha rifiutato l'orario della richiesta: l'orologio del server sembra sbagliato. Chiedi al tuo provider di hosting di sincronizzarlo (NTP)."
+
+#: includes/class-google-auth.php
+msgid "Google rejected the Service Account credentials."
+msgstr "Google ha rifiutato le credenziali del Service Account."
+
+#: includes/class-google-auth.php
+msgid "Could not obtain an access token from Google."
+msgstr "Impossibile ottenere un access token da Google."
+
+#, php-format
+#: includes/class-google-auth.php
+msgid "%1$s (HTTP %2$d: %3$s)"
+msgstr "%1$s (HTTP %2$d: %3$s)"
+
+#, php-format
+#: includes/class-google-auth.php
+msgid "Could not reach the Google Sheets API: %s"
+msgstr "Impossibile raggiungere le Google Sheets API: %s"
+
+#: includes/class-google-auth.php
+msgid "The Google Sheets API is not enabled for this Google Cloud project. Enable it in Google Cloud Console (APIs & Services → Library → Google Sheets API) and try again in a few minutes."
+msgstr "Le Google Sheets API non sono abilitate per questo progetto Google Cloud. Abilitale nella Google Cloud Console (API e servizi → Libreria → Google Sheets API) e riprova tra qualche minuto."
+
+#, php-format
+#: includes/class-google-auth.php
+msgid "Access denied. Open the spreadsheet in Google Sheets, click \"Share\" and add %s as Editor."
+msgstr "Accesso negato. Apri il foglio in Google Sheets, clicca su \"Condividi\" e aggiungi %s come Editor."
+
+#: includes/class-google-auth.php
+msgid "Spreadsheet not found. Check the Spreadsheet ID."
+msgstr "Foglio non trovato. Controlla lo Spreadsheet ID."
+
+#: includes/class-google-auth.php
+msgid "Sheet tab not found. Check the tab name (it is case-sensitive and must match exactly)."
+msgstr "Scheda non trovata. Controlla il nome della scheda (distingue maiuscole e minuscole e deve corrispondere esattamente)."
+
+#: includes/class-google-auth.php
+msgid "Google Sheets API quota exceeded. Wait a minute and try again."
+msgstr "Quota delle Google Sheets API superata. Attendi un minuto e riprova."
+
+#: includes/class-google-auth.php
+msgid "Google Sheets is temporarily unavailable. Try again later."
+msgstr "Google Sheets è temporaneamente non disponibile. Riprova più tardi."
+
+#: includes/class-google-auth.php
+msgid "The Google Sheets API returned an error."
+msgstr "Le Google Sheets API hanno restituito un errore."
+
+#: includes/class-google-auth.php
+msgid "The server OpenSSL library does not support AES-256-GCM, required to store the credentials securely."
+msgstr "La libreria OpenSSL del server non supporta AES-256-GCM, necessario per salvare le credenziali in modo sicuro."
+
+#: includes/class-google-auth.php
+msgid "Could not generate secure random bytes on this server."
+msgstr "Impossibile generare byte casuali sicuri su questo server."
+
+#: includes/class-google-auth.php
+msgid "Could not encrypt the credentials."
+msgstr "Impossibile cifrare le credenziali."
+
+#: includes/class-google-auth.php
+msgid "The stored credentials can no longer be decrypted (the WordPress security keys in wp-config.php may have changed). Remove them and upload the JSON key again."
+msgstr "Le credenziali salvate non possono più essere decifrate (le chiavi di sicurezza di WordPress in wp-config.php potrebbero essere cambiate). Rimuovile e carica di nuovo la chiave JSON."
+
+#: includes/class-notifier.php
+msgid "This is a test email from SheetSync for CF7."
+msgstr "Questa è un'email di prova di SheetSync for CF7."
+
+#: includes/class-notifier.php
+msgid "If you are reading it, the failure alerts will reach this address."
+msgstr "Se la stai leggendo, gli avvisi di errore arriveranno a questo indirizzo."
+
+#: includes/class-notifier.php
+msgid "Settings:"
+msgstr "Impostazioni:"
+
+#: includes/class-notifier.php
+msgid "Test alert"
+msgstr "Avviso di prova"
+
+#, php-format
+#: includes/class-notifier.php
+msgid "A submission of the form \"%s\" could not be sent to Google Sheets."
+msgstr "Un invio del modulo \"%s\" non è stato inviato a Google Sheets."
+
+#: includes/class-notifier.php
+msgid "Error:"
+msgstr "Errore:"
+
+#: includes/class-notifier.php
+msgid "Date:"
+msgstr "Data:"
+
+#: includes/class-notifier.php
+msgid "The entries archive is disabled, so this submission cannot be sent again. Its data is still in the Contact Form 7 notification email."
+msgstr "L'archivio invii è disattivato, quindi questo invio non può essere reinviato. I dati sono comunque nell'email di notifica di Contact Form 7."
+
+#, php-format
+#: includes/class-notifier.php
+msgid "SheetSync for CF7 will try again automatically (attempt %1$d of %2$d). You will receive another email only if the last attempt fails too."
+msgstr "SheetSync for CF7 riproverà automaticamente (tentativo %1$d di %2$d). Riceverai un'altra email solo se fallisce anche l'ultimo tentativo."
+
+#: includes/class-notifier.php
+msgid "Automatic retry is disabled: fix the problem, then send it again from the dashboard."
+msgstr "Il nuovo tentativo automatico è disattivato: risolvi il problema, poi reinvialo dalla dashboard."
+
+#: includes/class-notifier.php
+msgid "Dashboard:"
+msgstr "Dashboard:"
+
+#: includes/class-notifier.php
+msgid "Common causes: the spreadsheet is no longer shared with the Service Account, the tab or a header was renamed, the key was revoked, or Google is temporarily unavailable."
+msgstr "Cause frequenti: il foglio non è più condiviso con il Service Account, la scheda o un'intestazione è stata rinominata, la chiave è stata revocata oppure Google è temporaneamente non disponibile."
+
+#: includes/class-notifier.php
+msgid "Further failures in the next hour will not send another email."
+msgstr "Altri errori nella prossima ora non genereranno un'altra email."
+
+#, php-format
+#: includes/class-notifier.php
+msgid "Change or turn off these alerts: %s"
+msgstr "Modifica o disattiva questi avvisi: %s"
+
+#: includes/class-notifier.php
+msgid "A submission could not be sent to Google Sheets"
+msgstr "Un invio non è riuscito ad arrivare a Google Sheets"
+
+#: includes/class-notifier.php
+msgid "A submission was not sent to Google Sheets"
+msgstr "Un invio non è stato inviato a Google Sheets"
+
+#, php-format
+#: includes/class-notifier.php
+msgid "Form #%d"
+msgstr "Modulo #%d"
+
+#, php-format
+#: includes/class-notifier.php
+msgid "Automatic retries stopped after %d attempt. Fix the problem, then send it again from the dashboard."
+msgid_plural "Automatic retries stopped after %d attempts. Fix the problem, then send it again from the dashboard."
+msgstr[0] "Nuovi tentativi automatici interrotti dopo %d tentativo. Risolvi il problema, poi reinvialo dalla dashboard."
+msgstr[1] "Nuovi tentativi automatici interrotti dopo %d tentativi. Risolvi il problema, poi reinvialo dalla dashboard."
+
+#, php-format
+#: includes/class-notifier.php
+msgid "%d submission is currently in error."
+msgid_plural "%d submissions are currently in error."
+msgstr[0] "%d invio è attualmente in errore."
+msgstr[1] "%d invii sono attualmente in errore."
+
+#, php-format
+#: sheetsync-cf7.php
+msgid "SheetSync for CF7 requires PHP %1$s or higher. Your server is running PHP %2$s."
+msgstr "SheetSync for CF7 richiede PHP %1$s o superiore. Il tuo server usa PHP %2$s."
+
+#, php-format
+#: sheetsync-cf7.php
+msgid "SheetSync for CF7 requires WordPress %1$s or higher. You are running WordPress %2$s."
+msgstr "SheetSync for CF7 richiede WordPress %1$s o superiore. Stai usando WordPress %2$s."
+
+#: sheetsync-cf7.php
+msgid "SheetSync for CF7 requires the PHP OpenSSL extension to sign Google authentication requests. Ask your hosting provider to enable it."
+msgstr "SheetSync for CF7 richiede l'estensione PHP OpenSSL per firmare le richieste di autenticazione a Google. Chiedi al tuo provider di hosting di abilitarla."
+
+#: sheetsync-cf7.php
+msgid "Plugin activation error"
+msgstr "Errore di attivazione del plugin"
+
+#: sheetsync-cf7.php
+msgid "Activate Contact Form 7"
+msgstr "Attiva Contact Form 7"
+
+#: sheetsync-cf7.php
+msgid "Install Contact Form 7"
+msgstr "Installa Contact Form 7"
+
+#: sheetsync-cf7.php
+msgid "requires Contact Form 7 to be installed and active. The plugin is currently paused."
+msgstr "richiede che Contact Form 7 sia installato e attivo. Il plugin è al momento in pausa."
+
+#: sheetsync-cf7.php
+msgid "Sends Contact Form 7 submissions to Google Sheets in real time using your own Google Service Account (Bring Your Own Key). Lightweight, no external libraries."
+msgstr "Invia in tempo reale gli invii di Contact Form 7 a Google Sheets usando il tuo Google Service Account (Bring Your Own Key). Leggero, senza librerie esterne."

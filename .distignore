@@ -1,0 +1,11 @@
+# Files not shipped in the plugin zip / WordPress.org SVN
+# (read by bin/build-zip.py, WP-CLI dist-archive and the 10up deploy action).
+/.git
+/.github
+/bin
+/tests
+/dist
+.gitattributes
+.gitignore
+.distignore
+README.md
