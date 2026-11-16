@@ -864,7 +864,8 @@ final class SS_CF7_Admin_Settings {
 	 * Validates, encrypts and stores the pasted/uploaded JSON, then tests it.
 	 */
 	public function handle_save_credentials(): void {
-		$this->guard_admin_post( self::SAVE_ACTION );
+		$this->require_capability();
+		check_admin_referer( self::SAVE_ACTION );
 
 		// Validated field by field (and the key by OpenSSL) in parse_credentials().
 		$raw = isset( $_POST['ss_cf7_json'] ) && is_string( $_POST['ss_cf7_json'] ) ? wp_unslash( $_POST['ss_cf7_json'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
@@ -910,7 +911,8 @@ final class SS_CF7_Admin_Settings {
 	 * Removes the stored credentials.
 	 */
 	public function handle_delete_credentials(): void {
-		$this->guard_admin_post( self::DELETE_ACTION );
+		$this->require_capability();
+		check_admin_referer( self::DELETE_ACTION );
 
 		$this->auth->delete_credentials();
 
@@ -921,14 +923,15 @@ final class SS_CF7_Admin_Settings {
 	 * Saves the archive options.
 	 */
 	public function handle_save_options(): void {
-		$this->guard_admin_post( self::OPTIONS_ACTION );
+		$this->require_capability();
+		check_admin_referer( self::OPTIONS_ACTION );
 
 		$raw = isset( $_POST['ss_cf7_options'] ) && is_array( $_POST['ss_cf7_options'] ) ? wp_unslash( $_POST['ss_cf7_options'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized in sanitize_options().
 
 		SS_CF7_Entries::save_options( $raw );
 		SS_CF7_Entries::schedule_events();
 
-		if ( ! empty( $_POST['ss_cf7_test_alert'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- verified in guard_admin_post().
+		if ( ! empty( $_POST['ss_cf7_test_alert'] ) ) {
 			$to = SS_CF7_Notifier::recipients();
 
 			if ( empty( $to ) ) {
@@ -953,7 +956,8 @@ final class SS_CF7_Admin_Settings {
 	 * Saves the date and time format.
 	 */
 	public function handle_save_format(): void {
-		$this->guard_admin_post( self::FORMAT_ACTION );
+		$this->require_capability();
+		check_admin_referer( self::FORMAT_ACTION );
 
 		$raw = isset( $_POST['ss_cf7_format'] ) && is_array( $_POST['ss_cf7_format'] ) ? wp_unslash( $_POST['ss_cf7_format'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized in sanitize_format_options().
 
@@ -966,7 +970,8 @@ final class SS_CF7_Admin_Settings {
 	 * Saves the lead source tracking settings.
 	 */
 	public function handle_save_tracking(): void {
-		$this->guard_admin_post( self::TRACKING_ACTION );
+		$this->require_capability();
+		check_admin_referer( self::TRACKING_ACTION );
 
 		$raw = isset( $_POST['ss_cf7_tracking'] ) && is_array( $_POST['ss_cf7_tracking'] ) ? wp_unslash( $_POST['ss_cf7_tracking'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized in sanitize_options().
 
@@ -976,16 +981,12 @@ final class SS_CF7_Admin_Settings {
 	}
 
 	/**
-	 * Capability + nonce check for admin-post handlers.
-	 *
-	 * @param string $action Nonce action.
+	 * Capability check for the admin-post handlers (each handler then verifies its own nonce).
 	 */
-	private function guard_admin_post( string $action ): void {
+	private function require_capability(): void {
 		if ( ! current_user_can( self::CAPABILITY ) ) {
 			wp_die( esc_html__( 'You are not allowed to perform this action.', 'sheetsync-cf7' ), '', array( 'response' => 403 ) );
 		}
-
-		check_admin_referer( $action );
 	}
 
 	/**

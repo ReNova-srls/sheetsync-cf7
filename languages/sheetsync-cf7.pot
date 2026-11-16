@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: SheetSync for CF7 1.4.0\n"
+"Project-Id-Version: SheetSync for CF7 1.4.1\n"
 "POT-Creation-Date: 2026-11-16 19:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language: \n"

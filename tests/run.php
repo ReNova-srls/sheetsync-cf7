@@ -130,10 +130,24 @@ class Fake_WPDB {
 		return 1;
 	}
 	public function prepare( $q, ...$args ) {
-		$args             = ( 1 === count( $args ) && is_array( $args[0] ) ) ? $args[0] : $args;
+		$args = ( 1 === count( $args ) && is_array( $args[0] ) ) ? $args[0] : $args;
+		// Drop the table name passed for the %i placeholder.
+		preg_match_all( '/%[dsfi]/', $q, $m );
+		$i = array_search( '%i', $m[0], true );
+		if ( false !== $i ) {
+			array_splice( $args, $i, 1 );
+		}
 		$this->prepared[] = array( $q, $args );
 		return 'PREP#' . ( count( $this->prepared ) - 1 );
 	}
+	public function delete( $table, $where, $formats ) {
+		if ( ! isset( $this->rows[ $where['id'] ] ) ) {
+			return 0;
+		}
+		unset( $this->rows[ $where['id'] ] );
+		return 1;
+	}
+	public function esc_like( $s ) { return addcslashes( $s, '_%\\' ); }
 	private function resolve( $token ) { return $this->prepared[ (int) substr( $token, 5 ) ]; }
 	public function query( $token ) {
 		[ $q, $a ] = $this->resolve( $token );
@@ -665,6 +679,19 @@ $GLOBALS['menu'] = array( array( 'Contact', 'wpcf7_read_contact_forms', 'wpcf7' 
 check( 'older CF7: wpcf7', 'wpcf7' === SS_CF7_Admin_Settings::menu_parent() );
 $GLOBALS['menu'] = array();
 check( 'fallback: Settings', 'options-general.php' === SS_CF7_Admin_Settings::menu_parent() );
+
+echo "\n[entries queries]\n";
+$fp = new ReflectionMethod( SS_CF7_Entries::class, 'filter_params' );
+if ( PHP_VERSION_ID < 80100 ) {
+	$fp->setAccessible( true );
+}
+check( 'no filter: always-true values', array( 0, 0, '', '', '1970-01-01 00:00:00', '', '' ) === $fp->invoke( $entries, array() ) );
+$p = $fp->invoke( $entries, array( 'form_id' => 7, 'status' => 'failed', 'days' => 7, 'search' => '50%_off' ) );
+check( 'filters: form, status, search escaped', 7 === $p[0] && 7 === $p[1] && 'failed' === $p[2] && 'failed' === $p[3] && '%50\\%\\_off%' === $p[5] && $p[5] === $p[6] );
+check( 'filters: days -> GMT boundary', (bool) preg_match( '/^\d{4}-\d\d-\d\d \d\d:\d\d:\d\d$/', $p[4] ) && $p[4] > '1970-01-01 00:00:00' );
+check( 'filters: unknown status ignored', '' === $fp->invoke( $entries, array( 'status' => "x' OR 1=1" ) )[2] );
+$did = $entries->insert( 99, array(), array( 'a' => 'b' ) );
+check( 'delete by id', 1 === $entries->delete( array( $did, 0, 999999 ) ) && null === $entries->get( $did ) );
 
 echo "\n$pass passed, $fail failed\n";
 exit( $fail ? 1 : 0 );

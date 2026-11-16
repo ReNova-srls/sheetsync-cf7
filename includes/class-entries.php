@@ -239,7 +239,8 @@ final class SS_CF7_Entries {
 
 		$wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
-				'UPDATE ' . self::table() . ' SET status = %s, sent_at = %s, last_attempt_at = %s, attempts = attempts + 1, row_data = %s, error = NULL WHERE id = %d', // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+				'UPDATE %i SET status = %s, sent_at = %s, last_attempt_at = %s, attempts = attempts + 1, row_data = %s, error = NULL WHERE id = %d',
+				self::table(),
 				self::STATUS_SENT,
 				current_time( 'mysql', true ),
 				current_time( 'mysql', true ),
@@ -260,7 +261,8 @@ final class SS_CF7_Entries {
 
 		$wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
-				'UPDATE ' . self::table() . ' SET status = %s, last_attempt_at = %s, attempts = attempts + 1, error = %s WHERE id = %d', // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+				'UPDATE %i SET status = %s, last_attempt_at = %s, attempts = attempts + 1, error = %s WHERE id = %d',
+				self::table(),
 				self::STATUS_FAILED,
 				current_time( 'mysql', true ),
 				mb_substr( $error, 0, 2000 ),
@@ -283,11 +285,12 @@ final class SS_CF7_Entries {
 			return 0;
 		}
 
-		$placeholders = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
+		$deleted = 0;
+		foreach ( $ids as $id ) {
+			$deleted += (int) $wpdb->delete( self::table(), array( 'id' => $id ), array( '%d' ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		}
 
-		return (int) $wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-			$wpdb->prepare( 'DELETE FROM ' . self::table() . " WHERE id IN ({$placeholders})", $ids ) // phpcs:ignore WordPress.DB.PreparedSQL
-		);
+		return $deleted;
 	}
 
 	/**
@@ -305,7 +308,8 @@ final class SS_CF7_Entries {
 
 		return (int) $wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
-				'DELETE FROM ' . self::table() . ' WHERE created_at < %s', // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+				'DELETE FROM %i WHERE created_at < %s',
+				self::table(),
 				gmdate( 'Y-m-d H:i:s', time() - $days * DAY_IN_SECONDS )
 			)
 		);
@@ -326,7 +330,7 @@ final class SS_CF7_Entries {
 		global $wpdb;
 
 		$row = $wpdb->get_row( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-			$wpdb->prepare( 'SELECT * FROM ' . self::table() . ' WHERE id = %d', $id ), // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+			$wpdb->prepare( 'SELECT * FROM %i WHERE id = %d', self::table(), $id ),
 			ARRAY_A
 		);
 
@@ -346,7 +350,8 @@ final class SS_CF7_Entries {
 
 		$rows = $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
-				'SELECT * FROM ' . self::table() . ' WHERE ( status = %s OR ( status = %s AND created_at < %s ) ) AND attempts < %d ORDER BY COALESCE(last_attempt_at, created_at) ASC, id ASC LIMIT %d', // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+				'SELECT * FROM %i WHERE ( status = %s OR ( status = %s AND created_at < %s ) ) AND attempts < %d ORDER BY COALESCE(last_attempt_at, created_at) ASC, id ASC LIMIT %d',
+				self::table(),
 				self::STATUS_FAILED,
 				self::STATUS_PENDING,
 				gmdate( 'Y-m-d H:i:s', time() - self::STUCK_AFTER ),
@@ -397,14 +402,14 @@ final class SS_CF7_Entries {
 		global $wpdb;
 
 		return (int) $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-			$wpdb->prepare( 'SELECT COUNT(*) FROM ' . self::table() . ' WHERE status = %s', self::STATUS_FAILED ) // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+			$wpdb->prepare( 'SELECT COUNT(*) FROM %i WHERE status = %s', self::table(), self::STATUS_FAILED )
 		);
 	}
 
 	/**
 	 * Paginated list.
 	 *
-	 * @param array $filters  See where().
+	 * @param array $filters  See filter_params().
 	 * @param int   $page     1-based page.
 	 * @param int   $per_page Items per page.
 	 * @return array{items: array[], total: int}
@@ -412,17 +417,21 @@ final class SS_CF7_Entries {
 	public function query( array $filters, int $page = 1, int $per_page = 20 ): array {
 		global $wpdb;
 
-		[ $where, $params ] = $this->where( $filters );
+		$params = $this->filter_params( $filters );
 
+		// The WHERE clause is the same in query() and daily_counts(), see filter_params().
 		$total = (int) $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-			$params ? $wpdb->prepare( 'SELECT COUNT(*) FROM ' . self::table() . " WHERE {$where}", $params ) : 'SELECT COUNT(*) FROM ' . self::table() . " WHERE {$where}" // phpcs:ignore WordPress.DB.PreparedSQL
+			$wpdb->prepare(
+				"SELECT COUNT(*) FROM %i WHERE ( %d = 0 OR form_id = %d ) AND ( %s = '' OR status = %s ) AND created_at >= %s AND ( %s = '' OR fields LIKE %s )",
+				array_merge( array( self::table() ), $params )
+			)
 		);
 
 		$offset = max( 0, ( $page - 1 ) * $per_page );
 		$rows   = $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
-				'SELECT * FROM ' . self::table() . " WHERE {$where} ORDER BY created_at DESC, id DESC LIMIT %d OFFSET %d", // phpcs:ignore WordPress.DB.PreparedSQL
-				array_merge( $params, array( $per_page, $offset ) )
+				"SELECT * FROM %i WHERE ( %d = 0 OR form_id = %d ) AND ( %s = '' OR status = %s ) AND created_at >= %s AND ( %s = '' OR fields LIKE %s ) ORDER BY created_at DESC, id DESC LIMIT %d OFFSET %d",
+				array_merge( array( self::table() ), $params, array( $per_page, $offset ) )
 			),
 			ARRAY_A
 		);
@@ -436,7 +445,7 @@ final class SS_CF7_Entries {
 	/**
 	 * All entries matching the filters (CSV export), newest first.
 	 *
-	 * @param array $filters See where().
+	 * @param array $filters See filter_params().
 	 * @param int   $limit   Safety cap.
 	 * @return array[]
 	 */
@@ -467,13 +476,13 @@ final class SS_CF7_Entries {
 			);
 		}
 
-		$filters['days']    = $days;
-		[ $where, $params ] = $this->where( $filters );
+		$filters['days'] = $days;
+		$params          = $this->filter_params( $filters );
 
 		$rows = $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
-				'SELECT DATE(DATE_ADD(created_at, INTERVAL %d SECOND)) AS day, status, COUNT(*) AS total FROM ' . self::table() . " WHERE {$where} GROUP BY day, status", // phpcs:ignore WordPress.DB.PreparedSQL
-				array_merge( array( $offset ), $params )
+				"SELECT DATE(DATE_ADD(created_at, INTERVAL %d SECOND)) AS day, status, COUNT(*) AS total FROM %i WHERE ( %d = 0 OR form_id = %d ) AND ( %s = '' OR status = %s ) AND created_at >= %s AND ( %s = '' OR fields LIKE %s ) GROUP BY day, status",
+				array_merge( array( $offset, self::table() ), $params )
 			),
 			ARRAY_A
 		);
@@ -488,41 +497,39 @@ final class SS_CF7_Entries {
 	}
 
 	/**
-	 * Builds the WHERE clause.
+	 * Values for the fixed WHERE clause of query() and daily_counts():
+	 * ( %d = 0 OR form_id = %d ) AND ( %s = '' OR status = %s ) AND created_at >= %s AND ( %s = '' OR fields LIKE %s )
+	 *
+	 * An empty filter turns its condition into an always-true test, so the SQL
+	 * never changes and every value goes through $wpdb->prepare().
 	 *
 	 * @param array $filters {form_id?: int, status?: string, days?: int, search?: string}.
-	 * @return array{0: string, 1: array}
+	 * @return array Values of the 7 placeholders, in order.
 	 */
-	private function where( array $filters ): array {
+	private function filter_params( array $filters ): array {
 		global $wpdb;
 
-		$sql    = array( '1=1' );
-		$params = array();
+		$form_id = max( 0, (int) ( $filters['form_id'] ?? 0 ) );
 
-		if ( ! empty( $filters['form_id'] ) ) {
-			$sql[]    = 'form_id = %d';
-			$params[] = (int) $filters['form_id'];
+		$status = (string) ( $filters['status'] ?? '' );
+		if ( ! in_array( $status, array( self::STATUS_SENT, self::STATUS_FAILED, self::STATUS_PENDING ), true ) ) {
+			$status = '';
 		}
 
-		if ( ! empty( $filters['status'] ) && in_array( $filters['status'], array( self::STATUS_SENT, self::STATUS_FAILED, self::STATUS_PENDING ), true ) ) {
-			$sql[]    = 'status = %s';
-			$params[] = $filters['status'];
-		}
-
+		$since = '1970-01-01 00:00:00';
 		if ( ! empty( $filters['days'] ) ) {
 			// Day boundaries in the site timezone, converted back to GMT.
-			$offset   = (int) round( (float) get_option( 'gmt_offset', 0 ) * HOUR_IN_SECONDS );
-			$today    = (int) floor( ( time() + $offset ) / DAY_IN_SECONDS ) * DAY_IN_SECONDS;
-			$sql[]    = 'created_at >= %s';
-			$params[] = gmdate( 'Y-m-d H:i:s', $today - ( (int) $filters['days'] - 1 ) * DAY_IN_SECONDS - $offset );
+			$offset = (int) round( (float) get_option( 'gmt_offset', 0 ) * HOUR_IN_SECONDS );
+			$today  = (int) floor( ( time() + $offset ) / DAY_IN_SECONDS ) * DAY_IN_SECONDS;
+			$since  = gmdate( 'Y-m-d H:i:s', $today - ( (int) $filters['days'] - 1 ) * DAY_IN_SECONDS - $offset );
 		}
 
-		if ( isset( $filters['search'] ) && '' !== $filters['search'] ) {
-			$sql[]    = 'fields LIKE %s';
-			$params[] = '%' . $wpdb->esc_like( (string) $filters['search'] ) . '%';
+		$search = '';
+		if ( isset( $filters['search'] ) && '' !== (string) $filters['search'] ) {
+			$search = '%' . $wpdb->esc_like( (string) $filters['search'] ) . '%';
 		}
 
-		return array( implode( ' AND ', $sql ), $params );
+		return array( $form_id, $form_id, $status, $status, $since, $search, $search );
 	}
 
 	/**

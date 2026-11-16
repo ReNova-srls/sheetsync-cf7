@@ -2,7 +2,7 @@
 
 Send **Contact Form 7** submissions to **Google Sheets** in real time, with your own Google Service Account (Bring Your Own Key). No third-party servers, no Composer, no Google SDK.
 
-> WordPress plugin · PHP 8.0+ · WordPress 6.0+ · Contact Form 7 required · GPL-2.0-or-later
+> WordPress plugin · PHP 8.0+ · WordPress 6.2+ · Contact Form 7 required · GPL-2.0-or-later
 
 ## Features
 
