@@ -94,6 +94,15 @@ When enabled (Contact → SheetSync for CF7 → Settings), a small script reads 
 
 The stored key is encrypted with your WordPress salts. If they change, the plugin asks you to upload the JSON key again.
 
+== Screenshots ==
+
+1. Contact → SheetSync for CF7: quick start guide and connection of the Google Service Account.
+2. The "Google Sheets" tab of a Contact Form 7 form, with the column mapping.
+3. Dashboard: submissions per day, totals and searchable list of the entries.
+4. Entry inspector: submitted data, row written in the sheet and "Send again".
+5. Settings: date format, automatic retry, email alerts and lead source tracking.
+6. Submissions arriving in Google Sheets.
+
 == External services ==
 
 This plugin connects to Google APIs to send form submissions to the Google Sheet configured by the site administrator. Nothing is sent until an administrator uploads a Service Account key and enables a form.

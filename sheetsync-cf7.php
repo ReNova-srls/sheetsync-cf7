@@ -265,7 +265,16 @@ function ss_cf7_missing_cf7_notice() {
 		'<div class="notice notice-error"><p><strong>%1$s</strong> %2$s</p>%3$s</div>',
 		esc_html__( 'SheetSync for CF7', 'sheetsync-cf7' ),
 		esc_html__( 'requires Contact Form 7 to be installed and active. The plugin is currently paused.', 'sheetsync-cf7' ),
-		$button ? '<p>' . $button . '</p>' : '' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above.
+		wp_kses(
+			$button ? '<p>' . $button . '</p>' : '',
+			array(
+				'p' => array(),
+				'a' => array(
+					'href'  => array(),
+					'class' => array(),
+				),
+			)
+		)
 	);
 }
 

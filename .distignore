@@ -4,6 +4,7 @@
 /.github
 /bin
 /tests
+/.wordpress-org
 /dist
 .gitattributes
 .gitignore
