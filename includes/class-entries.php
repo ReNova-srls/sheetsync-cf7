@@ -417,13 +417,14 @@ final class SS_CF7_Entries {
 	public function query( array $filters, int $page = 1, int $per_page = 20 ): array {
 		global $wpdb;
 
-		$params = $this->filter_params( $filters );
+		[ $form_a, $form_b, $status_a, $status_b, $since, $search_a, $search_b ] = $this->filter_params( $filters );
 
 		// The WHERE clause is the same in query() and daily_counts(), see filter_params().
 		$total = (int) $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
 				"SELECT COUNT(*) FROM %i WHERE ( %d = 0 OR form_id = %d ) AND ( %s = '' OR status = %s ) AND created_at >= %s AND ( %s = '' OR fields LIKE %s )",
-				array_merge( array( self::table() ), $params )
+				self::table(),
+				$form_a, $form_b, $status_a, $status_b, $since, $search_a, $search_b
 			)
 		);
 
@@ -431,7 +432,10 @@ final class SS_CF7_Entries {
 		$rows   = $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
 				"SELECT * FROM %i WHERE ( %d = 0 OR form_id = %d ) AND ( %s = '' OR status = %s ) AND created_at >= %s AND ( %s = '' OR fields LIKE %s ) ORDER BY created_at DESC, id DESC LIMIT %d OFFSET %d",
-				array_merge( array( self::table() ), $params, array( $per_page, $offset ) )
+				self::table(),
+				$form_a, $form_b, $status_a, $status_b, $since, $search_a, $search_b,
+				$per_page,
+				$offset
 			),
 			ARRAY_A
 		);
@@ -477,12 +481,14 @@ final class SS_CF7_Entries {
 		}
 
 		$filters['days'] = $days;
-		$params          = $this->filter_params( $filters );
+		[ $form_a, $form_b, $status_a, $status_b, $since, $search_a, $search_b ] = $this->filter_params( $filters );
 
 		$rows = $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			$wpdb->prepare(
 				"SELECT DATE(DATE_ADD(created_at, INTERVAL %d SECOND)) AS day, status, COUNT(*) AS total FROM %i WHERE ( %d = 0 OR form_id = %d ) AND ( %s = '' OR status = %s ) AND created_at >= %s AND ( %s = '' OR fields LIKE %s ) GROUP BY day, status",
-				array_merge( array( $offset, self::table() ), $params )
+				$offset,
+				self::table(),
+				$form_a, $form_b, $status_a, $status_b, $since, $search_a, $search_b
 			),
 			ARRAY_A
 		);

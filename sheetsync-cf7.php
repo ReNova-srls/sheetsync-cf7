@@ -3,7 +3,7 @@
  * Plugin Name:       SheetSync for CF7
  * Plugin URI:        https://github.com/ReNova-srls/sheetsync-cf7
  * Description:       Sends Contact Form 7 submissions to Google Sheets in real time using your own Google Service Account (Bring Your Own Key). Lightweight, no external libraries.
- * Version:           1.4.1
+ * Version:           1.4.2
  * Requires at least: 6.2
  * Requires PHP:      8.0
  * Requires Plugins:  contact-form-7
@@ -26,7 +26,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SS_CF7_VERSION', '1.4.1' );
+define( 'SS_CF7_VERSION', '1.4.2' );
 define( 'SS_CF7_FILE', __FILE__ );
 define( 'SS_CF7_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SS_CF7_URL', plugin_dir_url( __FILE__ ) );

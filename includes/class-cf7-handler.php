@@ -131,7 +131,7 @@ final class SS_CF7_Handler {
 			'spreadsheet_id' => '',
 			'sheet_name'     => '',
 			'meta'           => array( 'datetime' ),
-			'exclude'        => array(),
+			'exclude'        => array(), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- settings key (fields not to send), not a query argument.
 			'mapping'        => array(),
 			'pipes'          => 'value',
 		);
@@ -166,7 +166,7 @@ final class SS_CF7_Handler {
 			'spreadsheet_id' => SS_CF7_Google_Auth::sanitize_spreadsheet_id( isset( $raw['spreadsheet_id'] ) && is_string( $raw['spreadsheet_id'] ) ? $raw['spreadsheet_id'] : '' ),
 			'sheet_name'     => SS_CF7_Google_Auth::sanitize_sheet_name( isset( $raw['sheet_name'] ) && is_string( $raw['sheet_name'] ) ? $raw['sheet_name'] : '' ),
 			'meta'           => array_values( array_intersect( self::META_KEYS, $meta ) ),
-			'exclude'        => array_values( array_unique( array_filter( array_map( array( self::class, 'sanitize_field_name' ), $exclude ) ) ) ),
+			'exclude'        => array_values( array_unique( array_filter( array_map( array( self::class, 'sanitize_field_name' ), $exclude ) ) ) ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- settings key (fields not to send), not a query argument.
 			'mapping'        => self::sanitize_mapping( $raw['mapping'] ?? array() ),
 			'pipes'          => isset( $raw['pipes'] ) && in_array( $raw['pipes'], self::PIPE_MODES, true ) ? $raw['pipes'] : 'value',
 		);

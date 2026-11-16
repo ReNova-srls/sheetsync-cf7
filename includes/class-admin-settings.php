@@ -1097,7 +1097,7 @@ final class SS_CF7_Admin_Settings {
 			'spreadsheet_id' => isset( $_POST['spreadsheet_id'] ) && is_string( $_POST['spreadsheet_id'] ) ? wp_unslash( $_POST['spreadsheet_id'] ) : '',
 			'sheet_name'     => isset( $_POST['sheet_name'] ) && is_string( $_POST['sheet_name'] ) ? wp_unslash( $_POST['sheet_name'] ) : '',
 			'meta'           => isset( $_POST['meta'] ) && is_array( $_POST['meta'] ) ? wp_unslash( $_POST['meta'] ) : array(),
-			'exclude'        => isset( $_POST['exclude'] ) && is_array( $_POST['exclude'] ) ? wp_unslash( $_POST['exclude'] ) : array(),
+			'exclude'        => isset( $_POST['exclude'] ) && is_array( $_POST['exclude'] ) ? wp_unslash( $_POST['exclude'] ) : array(), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- settings key, not a query argument.
 			'mapping'        => is_array( $mapping ) ? $mapping : array(),
 		);
 		// phpcs:enable

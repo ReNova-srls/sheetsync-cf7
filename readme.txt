@@ -4,7 +4,7 @@ Tags: contact form 7, google sheets, spreadsheet, cf7, leads
 Requires at least: 6.2
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,9 @@ Google Privacy Policy: https://policies.google.com/privacy
 Site owners are responsible for informing visitors (e.g. in their privacy policy) that form data is stored in Google Sheets and, when the archive is enabled, in the WordPress database. When the lead source tracking is enabled, the campaign parameters of the landing page are kept in the visitor's browser (localStorage) and sent with the form; no data is sent to third parties by this feature.
 
 == Changelog ==
+
+= 1.4.2 =
+* Changed: the dashboard queries pass every value to $wpdb->prepare() as a separate argument (Plugin Check).
 
 = 1.4.1 =
 * Changed: database queries use identifier placeholders and a fixed WHERE clause; every admin form verifies its nonce in the handler itself.
