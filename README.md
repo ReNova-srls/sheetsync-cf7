@@ -1,4 +1,8 @@
-# SheetSync for CF7
+![SheetSync for CF7: Contact Form 7 to Google Sheets in real time](.wordpress-org/banner-1544x500.png)
+
+# <img src=".wordpress-org/icon-128x128.png" alt="" width="40" height="40" align="top"> SheetSync for CF7
+
+[![CI](https://github.com/ReNova-srls/sheetsync-cf7/actions/workflows/ci.yml/badge.svg)](https://github.com/ReNova-srls/sheetsync-cf7/actions/workflows/ci.yml)
 
 Send **Contact Form 7** submissions to **Google Sheets** in real time, with your own Google Service Account (Bring Your Own Key). No third-party servers, no Composer, no Google SDK.
 
